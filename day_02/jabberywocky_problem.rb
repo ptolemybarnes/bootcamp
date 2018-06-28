@@ -8,6 +8,9 @@
 # sausages: 5
 # eggs: 3
 # ...etc
+# 
+# - Words should be ordered starting with the most frequent.
+# - The count should be case-insensitive.
 #
 # SKILLS
 # - Using hashes
