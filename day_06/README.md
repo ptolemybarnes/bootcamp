@@ -9,3 +9,10 @@ OBJECTIVES
 - Modules
 - Including modules
 - Extending modules
+
+#something
+[
+=> instance's class
+=> any modules
+=> superclass
+]
