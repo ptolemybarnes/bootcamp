@@ -21,6 +21,22 @@ describe Chance do
     it { expect(LIKELY).to eq !!LIKELY }
     it { expect(CERTAIN).to eq IMPOSSIBLE.not }
   end
+
+  describe 'test_and' do
+    it { expect(UNLIKELY).to eq EQUALLY_LIKELY.and(EQUALLY_LIKELY) }
+    it { expect(Chance.new(0.1875)).to eq LIKELY.and(UNLIKELY) }
+    it { expect(Chance.new(0.1875)).to eq(LIKELY & UNLIKELY) }
+    it { expect(LIKELY).to eq CERTAIN.and(LIKELY) }
+    it { expect(IMPOSSIBLE).to eq IMPOSSIBLE.and(LIKELY) }
+  end
+
+  describe 'test or' do
+    it { expect(LIKELY).to eq EQUALLY_LIKELY.or(EQUALLY_LIKELY) }
+    it { expect(Chance.new(0.8125)).to eq(LIKELY.or(UNLIKELY)) }
+    it { expect(Chance.new(0.8125)).to eq(LIKELY | UNLIKELY) }
+    it { expect(CERTAIN).to eq CERTAIN.or(LIKELY) }
+    it { expect(LIKELY).to eq IMPOSSIBLE.or(LIKELY) }
+  end
 end
 
 
