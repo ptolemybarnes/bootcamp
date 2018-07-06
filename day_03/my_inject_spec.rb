@@ -1,10 +1,20 @@
+require './my_inject'
+
 RSpec.describe 'my_inject' do
-  it 'addition' do
+  it 'addition of numbers' do
     input = [1, 2, 3]
 
     result = input.my_inject {|sum, i| sum + i }
 
     expect(result).to eq 1 + 2 + 3
+  end
+
+  it 'concatenation of strings' do
+    input = ['first', 'second', 'third']
+
+    result = input.my_inject {|sentence, word| sentence + ', ' + word }
+    p
+    expect(result).to eq 'first, second, third'
   end
 
   it 'with object' do
